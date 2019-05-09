@@ -4,6 +4,7 @@ package b.gc;
  * gc 说明
  * VM 参数：
  * -verbose:gc -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:+UseSerialGC -XX:SurvivorRatio=8
+ * -XX:PretenureSizeThreshold=3145728
  * 虚拟机参数说明：
  * -XX:+PrintGCDetails  发生gc时打印日志
  * -Xms20M:堆内存最小值
@@ -14,7 +15,7 @@ package b.gc;
  * @Author: yyl
  * @Date: 2019/4/26 10:43
  */
-public class MyTest3 {
+public class MyTest4 {
     private static final int _1MB = 1024*1024;
     public static void main(String[] args){
         byte[] application1,application2,application3,application4;
