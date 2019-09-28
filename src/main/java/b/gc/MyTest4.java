@@ -18,11 +18,12 @@ package b.gc;
 public class MyTest4 {
     private static final int _1MB = 1024*1024;
     public static void main(String[] args){
-        byte[] application1,application2,application3,application4;
+        byte[] application1,application2,application3,application4,application5,application6;
         application1 = new byte[2*_1MB];
         application2 = new byte[2*_1MB];
+        application4 = new byte[7*_1MB];
         application3 = new byte[2*_1MB];
-        application4 = new byte[4*_1MB];
+        application5 = new byte[2*_1MB];
     }
     
 }

@@ -1,6 +1,5 @@
 package b.gc;
 
-import com.sun.istack.internal.FinalArrayList;
 
 /**
  * 一次对象自我拯救的演示，说明两点问题

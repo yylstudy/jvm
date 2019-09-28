@@ -16,6 +16,7 @@ public class MyTest6 {
     }
     public static void main(String[] args) throws Exception{
         fillHeap(1000);
+        System.gc();
     }
     public static void fillHeap(int num) throws Exception{
         List<OOMObject> list = new ArrayList();
@@ -23,7 +24,7 @@ public class MyTest6 {
             Thread.sleep(50);
             list.add(new OOMObject());
         }
-        System.gc();
+
     }
 
 }
