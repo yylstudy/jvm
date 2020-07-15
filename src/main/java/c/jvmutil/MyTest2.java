@@ -6,32 +6,31 @@ package c.jvmutil;
  * @Date: 2019/5/5 14:33
  */
 public class MyTest2 {
-    static class SynAddRunnable implements Runnable{
-        int a;
-        int b;
-        public SynAddRunnable(int a,int b){
-            this.a = a;
-            this.b = b;
+    public static void main(String[] args) {
+        Object obj1 = new Object();
+        Object obj2 = new Object();
+        new Thread(new MyThread(obj1,obj2)).start();
+        new Thread(new MyThread(obj2,obj1)).start();
+    }
+    static class MyThread extends Thread{
+        private Object obja;
+        private Object objb;
+        public MyThread(Object obja,Object objb){
+            this.obja = obja;
+            this.objb = objb;
         }
-
         @Override
         public void run() {
-            synchronized (Integer.valueOf(a)){
-                try{
+            try{
+                synchronized (obja){
                     Thread.sleep(100);
-                    synchronized (Integer.valueOf(b)){
+                    synchronized (objb){
 
                     }
-                }catch (Exception e){
-
                 }
-
+            }catch (Exception e){
+                throw new RuntimeException(e);
             }
         }
     }
-    public static void main(String[] args){
-        new Thread(new SynAddRunnable(1,2)).start();
-        new Thread(new SynAddRunnable(2,1)).start();
-    }
-
 }

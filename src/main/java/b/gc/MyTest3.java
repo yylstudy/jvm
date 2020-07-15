@@ -5,7 +5,7 @@ package b.gc;
  * VM 参数：
  * -verbose:gc -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:+UseSerialGC -XX:SurvivorRatio=8
  * 虚拟机参数说明：
- * -XX:+PrintGCDetails  发生gc时打印日志
+ * -XX:+PrintGCDetails  发生gc时打印日志，并且在进程退出时输出当前内存各区域分配情况
  * -Xms20M:堆内存最小值
  * -Xmx20M:堆内存最大值
  * -Xmn10M:10M分配给新生代，剩下10M分配给老年代

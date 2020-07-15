@@ -12,18 +12,13 @@ package b.gc;
  * -Xmn10M:10M分配给新生代，剩下10M分配给老年代
  * -XX:SurvivorRatio=8:新生代中Eden区与一个Survivor的比例是8:1
  * -XX:UseSerialGC:表示jvm使用Serial+Serial Old的收集器组合进行gc
+ * -XX:PretenureSizeThreshold=3145728: 大于该值的对象直接在老年代分配
  * @Author: yyl
  * @Date: 2019/4/26 10:43
  */
 public class MyTest4 {
-    private static final int _1MB = 1024*1024;
     public static void main(String[] args){
-        byte[] application1,application2,application3,application4,application5,application6;
-        application1 = new byte[2*_1MB];
-        application2 = new byte[2*_1MB];
-        application4 = new byte[7*_1MB];
-        application3 = new byte[2*_1MB];
-        application5 = new byte[2*_1MB];
+        byte[] application1 = new byte[4*1024*1024];
     }
     
 }

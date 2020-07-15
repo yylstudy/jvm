@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * java 堆内存溢出
- * VM Args: -Xms20m-Xmx20m-XX:+HeapDumpOnOutOfMemoryError
+ * VM Args: -Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError
  * 参数解析：
  * -Xms20m:设置java堆的最小值为20M
  * -Xmx20m:设置java堆的最大值为20M   如果对的最大值和最小值设置为一致，那说明此堆不可拓展
@@ -18,10 +18,10 @@ public class MyTest1 {
         
     }
     public static void main(String[] args){
-        long t1 = System.currentTimeMillis();
         List<OomObject> list = new ArrayList();
         while (true) {
-            list.add(new OomObject());
+            OomObject oomObject = new OomObject();
+            list.add(oomObject);
         }
     }
     
